@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>パンダさんワークス｜AIに仕事を頼める人になって、本当にやりたいことに時間を使おう</title>
+<meta name="description" content="あなたの仕事を教材に、ChatGPTやClaudeなどのAIを、あなた自身が使えるようになるまで1対1で一緒に進めます。">
+
+<!-- ============================================================
+     差し替えるのはここだけ
+     ① ロゴ …… assets/logo.png（屋号はロゴ画像に入っている）
+     ② LINE … いまは「準備中」表示。開設したらボタンに戻す（下のコメント参照）
+     ============================================================ -->
+
+<style>
+/* ---------- 改行の土台（4点セット・1つでも欠くと端末で崩れる） ---------- */
+body{ word-break:keep-all; overflow-wrap:anywhere; text-wrap:pretty; }
+h1,h2,h3,h4{ text-wrap:balance; }
+.nb{ white-space:nowrap; }
+.url,code{ word-break:break-all; }
+
+/* ---------- パンダさん配色：白と黒だけ ---------- */
+:root{
+  --bg:#ffffff;
+  --paper:#fafafa;
+  --ink:#141414;
+  --ink-sub:#5a5a5a;
+  --line:#e3e3e3;
+}
+*{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+body{
+  margin:0;
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Yu Gothic",system-ui,sans-serif;
+  font-size:17px; line-height:1.9; color:var(--ink); background:var(--bg);
+}
+.shell{ max-width:720px; margin:0 auto; padding:0 20px; }
+section{ padding:44px 0; border-top:1px solid var(--line); }
+h2{ font-size:1.28rem; margin:0 0 6px; letter-spacing:.02em; }
+h2 + .lead{ margin:0 0 22px; color:var(--ink-sub); font-size:.95rem; }
+p{ margin:0 0 1em; }
+
+/* ---------- ヘッダー ---------- */
+header{ padding:40px 0 34px; text-align:center; }
+.logo{ width:min(210px, 62%); height:auto; margin:0 auto 20px; display:block; }
+h1{ font-size:1.72rem; line-height:1.6; margin:0 0 14px; font-weight:700; }
+.tagline{ color:var(--ink-sub); font-size:1rem; margin:0; }
+
+/* ---------- カード（進め方） ---------- */
+.cards{ display:grid; gap:14px; }
+.card{ background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:20px 22px; }
+.card h3{ margin:0 0 8px; font-size:1.05rem; display:flex; align-items:center; gap:12px; }
+/* 番号はパンダさんの顔：白い顔＋黒い耳（ロゴと同じ配色） */
+.card h3 .num{
+  position:relative; isolation:isolate; flex:none;
+  width:28px; height:26px; margin-top:4px;
+  display:inline-flex; align-items:center; justify-content:center;
+  font-size:.8rem; font-weight:700; line-height:1; color:var(--ink);
+  background:#fff; border:2px solid var(--ink); border-radius:50%;
+}
+.card h3 .num::before,.card h3 .num::after{
+  content:""; position:absolute; z-index:-1; top:-6px;
+  width:12px; height:12px; border-radius:50%; background:var(--ink);
+}
+.card h3 .num::before{ left:-4px; }
+.card h3 .num::after{ right:-4px; }
+.card p{ margin:0; font-size:.96rem; color:var(--ink-sub); }
+
+/* ---------- 一覧 ---------- */
+.list{ list-style:none; padding:0; margin:0; }
+.list li{ padding:13px 0 13px 26px; border-bottom:1px dashed var(--line);
+  position:relative; font-size:.98rem; }
+.list li:last-child{ border-bottom:0; }
+.list li::before{ content:""; position:absolute; left:2px; top:25px;
+  width:6px; height:6px; border-radius:999px; background:var(--ink); }
+.list strong{ display:block; }
+.list .sub{ color:var(--ink-sub); font-size:.94rem; }
+
+/* ---------- 囲み（例・補足） ---------- */
+.box{ background:#f5f5f5; border-radius:14px; padding:20px 22px;
+  font-size:.94rem; color:var(--ink-sub); margin-top:14px; }
+.box h3{ margin:0 0 6px; font-size:.98rem; color:var(--ink); }
+.box ul{ margin:0; padding-left:1.15em; }
+.box li{ margin:.35em 0; }
+.box p{ margin:0; }
+.box + .box{ margin-top:12px; }
+.after{ margin:22px 0 0; font-size:.96rem; }
+
+/* ---------- ゴール ---------- */
+.goal{ font-size:1.1rem; font-weight:700; line-height:1.8; margin:0 0 14px; }
+
+/* ---------- 料金 ---------- */
+.plan{ background:var(--paper); border:1px solid var(--line);
+  border-radius:14px; padding:20px 22px; margin-bottom:14px; }
+.plan.is-main{ border:2px solid var(--ink); }
+.plan-head{ display:flex; justify-content:space-between; align-items:baseline;
+  gap:12px; flex-wrap:wrap; margin-bottom:8px; }
+.plan-name{ font-weight:700; font-size:1.06rem; }
+.plan-price{ font-weight:700; font-size:1.24rem; }
+.plan-price small{ font-size:.76rem; font-weight:400; color:var(--ink-sub); }
+.badge{ display:inline-block; font-size:.72rem; background:var(--ink); color:#fff;
+  border-radius:999px; padding:2px 10px; margin-left:8px; vertical-align:middle; }
+.plan ul{ margin:0; padding-left:1.15em; font-size:.94rem; color:var(--ink-sub); }
+.plan li{ margin:.25em 0; }
+.plans-sub{ margin:26px 0 12px; font-size:.95rem; font-weight:700; }
+
+/* ---------- 問い合わせ ---------- */
+.cta{ text-align:center; }
+.btn{ display:inline-block; background:var(--ink); color:#fff; text-decoration:none;
+  font-weight:700; font-size:1.04rem; padding:15px 38px; border-radius:999px; margin:8px 0 12px; }
+.btn:hover{ background:#333; }
+.cta .note{ font-size:.88rem; color:var(--ink-sub); }
+.soon{ display:inline-block; background:#f0f0f0; color:var(--ink-sub); font-weight:700;
+  font-size:.98rem; padding:13px 28px; border-radius:999px; margin:8px 0 12px; }
+
+/* ---------- フッター ---------- */
+footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
+  color:var(--ink-sub); border-top:1px solid var(--line); }
+footer a{ color:var(--ink); }
+
+/* ---------- スマホ ---------- */
+@media (max-width:700px){
+  header{ padding:32px 0 28px; }
+  .logo{ width:160px; }
+  h1{ font-size:1.46rem; }
+}
+
+/* ---------- 印刷 ---------- */
+@media print{
+  .card,.plan,.box{ break-inside:avoid; }
+}
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+<header>
+  <img class="logo" src="assets/logo.png" alt="パンダさんワークス">
+  <h1><span class="nb">AI</span>に仕事を頼める人になって、<br>本当にやりたいことに<span class="nb">時間を使おう。</span></h1>
+  <p class="tagline">あなたの仕事に合わせて、<br><span class="nb">AI</span>を自分で使えるようになるまで伴走します。</p>
+</header>
+
+<main>
+
+<section>
+  <h2>こんな方と、一緒に進めます</h2>
+  <p class="lead"><span class="nb">ChatGPT</span>を触ったことはある。画像を作ったり、雑談や相談をしたり、調べものに使ったりもしている。<br>
+    でも、自分の仕事にどう使えばいいのかは分からない。<br>
+    そんな方が中心です。<span class="nb">AI</span>がまったく初めての方も大丈夫です。</p>
+  <ul class="list">
+    <li><strong>副業で事業をしている方</strong><span class="sub">本業の合間でも続くように、オンラインを中心に進めます。</span></li>
+    <li><strong>個人事業主の方</strong><span class="sub">うかがって、実際の仕事をとなりで見ながら進めます。</span></li>
+    <li><strong>法人の方</strong><span class="sub">法人向けのプランは、今後の展開を予定しています。</span></li>
+  </ul>
+</section>
+
+<section>
+  <h2>目指すところ</h2>
+  <p class="goal">あなたが、自分の仕事を<span class="nb">AI</span>に相談したり、指示したりできるようになること。</p>
+  <p>簡単な仕事なら、その場で1つ改善できてしまうこともあります。大きな自動化のように時間がかかるものは、「何を作るか」「どう進めるか」を決めて、最初の一歩と、そのあと自分で続ける方法までを一緒にやります。</p>
+  <p>大事なのは、できあがったものより、次から自分で<span class="nb">AI</span>を使って進められることです。<br>
+    その先で、本当にやりたいことに使える時間を増やしていきましょう。</p>
+</section>
+
+<section>
+  <h2>進め方</h2>
+  <p class="lead">教材は、あなたの実際の仕事です。順番や時間のかけ方は、人によって変わります。</p>
+  <div class="cards">
+    <div class="card">
+      <h3><span class="num">1</span>あなたに合うAIを、使える状態にする</h3>
+      <p>何を使えばいいかを一緒に選んで、あなたのPCと、あなたのアカウントで使えるようにします。<span class="nb">ChatGPT</span>や<span class="nb">Claude</span>など、合うものは人によって違います。</p>
+    </div>
+    <div class="card">
+      <h3><span class="num">2</span>あなたの仕事を、あなたの手でAIに頼む</h3>
+      <p>いま手が止まっている仕事を持ってきてください。指示を出す、結果を見る、直す。これを、あなたの手で繰り返します。代わりにやってしまうことはしません。</p>
+    </div>
+    <div class="card">
+      <h3><span class="num">3</span>うまくいったら、次も使える形にする</h3>
+      <p>うまくいったやり方は、次から一言で同じことができるように残します。一度できたことを、毎回説明し直さなくて済むようにします。</p>
+    </div>
+  </div>
+
+  <div class="box">
+    <h3><span class="nb">AI</span>がほとんど初めての方</h3>
+    <p>使うAIを選ぶところから始めます。必要なら契約をして、PCの環境を確かめ、基本の使い方と、自分の仕事をAIに相談するやり方までをやります。</p>
+  </div>
+  <div class="box">
+    <h3>もう<span class="nb">ChatGPT</span>などを使っている方</h3>
+    <p>基本の説明は短くして、1回目から実際の仕事を題材にします。</p>
+  </div>
+
+  <p class="after">そのあとは、同じ目線の仲間です。新しい困りごとが出てきたら、また気軽に相談してください。</p>
+</section>
+
+<section>
+  <h2>これまでにやってきたこと</h2>
+  <p class="lead">教えながら形にしたことも、自分の仕事で試したこともあります。</p>
+  <ul class="list">
+    <li>ある職場で、<span class="nb">特定の担当者</span>しかやっていなかった工程の多い作業を、本人に聞き取りながら<span class="nb">AI</span>に実行させる形にしました。<b><span class="nb">1〜2時間</span>かかっていた作業が<span class="nb">20〜30分</span>になり</b>、担当者以外の人でもできるようになりました</li>
+    <li>自分の見積もり作業を<span class="nb">AI</span>に説明して、自動でできるようにしました。<b>1件<span class="nb">30〜40分</span>かかっていたのが、<span class="nb">約8分</span>になりました</b></li>
+    <li>ブラウザで動く<span class="nb">Webページ・ツールを18本</span>作り、そのうち<span class="nb">16本</span>を公開しています</li>
+    <li>毎朝の情報配信を<span class="nb">全自動で運用中</span>です</li>
+    <li><span class="nb">LINE公式アカウント</span>を作り、毎日の自動配信を運用しています</li>
+  </ul>
+</section>
+
+<section>
+  <h2>料金</h2>
+  <p class="lead">仕事の困りごとは、これからも出てきます。<br>
+    そのたびに誰かへ頼むのではなく、自分で<span class="nb">AI</span>に頼めるようになるための料金です。</p>
+
+  <div class="plan is-main">
+    <div class="plan-head">
+      <span class="plan-name">AI導入支援 4回チケット<span class="badge">基本</span></span>
+      <span class="plan-price"><span class="nb">49,800円</span><small>／税込</small></span>
+    </div>
+    <ul>
+      <li><span class="nb">60分×4回</span>。購入日から<span class="nb">60日間</span>使えます</li>
+      <li>1回ずつでも、同じ日に2回分を続けて（<span class="nb">120分</span>）でも使えます</li>
+      <li>決まった授業はありません。あなたの現在地に合わせて使う、導入の4時間です</li>
+      <li>チケットをお持ちの間は、公式<span class="nb">LINE</span>で何度でも相談できます</li>
+      <li>1対1で、訪問でもオンラインでも進められます</li>
+      <li>訪問の交通費は、<span class="nb">名古屋市内</span>なら料金に含みます。市外・県外はご相談ください（交通費はご負担いただきます）</li>
+      <li><span class="nb">ChatGPT</span>や<span class="nb">Claude</span>などの利用料は含みません。あなたのアカウントで契約していただきます</li>
+    </ul>
+  </div>
+
+  <div class="plan">
+    <div class="plan-head">
+      <span class="plan-name">60分相談</span>
+      <span class="plan-price"><span class="nb">9,800円</span><small>／1回・税込</small></span>
+    </div>
+    <ul>
+      <li>内容はおまかせです。困っていること、試してみたいこと、なんでも</li>
+      <li>導入支援のあとに、新しい困りごとが出てきたときにも</li>
+      <li>訪問でもオンラインでも進められます（交通費は4回チケットと同じ扱いです）</li>
+    </ul>
+  </div>
+
+  <p class="plans-sub">必要なときだけ</p>
+
+  <div class="plan">
+    <div class="plan-head">
+      <span class="plan-name">道具づくりの代行</span>
+      <span class="plan-price"><span class="nb">30,000円</span>〜<small>／1本・税込</small></span>
+    </div>
+    <ul>
+      <li>急いでいるときや、作る時間が取れないときに</li>
+      <li>基本は、ご自身で作れるようにお手伝いします</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>ご相談について</h2>
+  <p class="lead">気持ちよく続けるために、先に決めさせてください。</p>
+
+  <div class="box">
+    <h3>訪問・オンラインは、事前予約制です</h3>
+    <ul>
+      <li>平日　<span class="nb">18〜22時</span></li>
+      <li>土日　<span class="nb">9〜22時</span></li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h3>4回チケット中の<span class="nb">LINE</span>相談</h3>
+    <ul>
+      <li>セッションで取り組んでいることを自分で触っていて、詰まったときに使ってください（「この画面になったけど、次はどうする？」「前回の指示を入れたら、こうなった」「この結果で合っている？」など）</li>
+      <li>新しい仕事を自動化したい、新しい仕組みを考えたい、じっくり相談したい、といったときは、チケットの1回か、60分相談でお受けします</li>
+      <li>4回分を使い切ったとき、または購入から<span class="nb">60日</span>が過ぎたときに、<span class="nb">LINE</span>相談も終わります。続けたいときは、新しいチケットをお求めください</li>
+      <li>お返事は、返せるときにお返しします（すぐに返せないこともあります）</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h3>そのほか</h3>
+    <ul>
+      <li>お電話でのご相談は、予約したセッションの中でお願いしています</li>
+      <li>道具づくりの代行は、相談とは別のご依頼になります</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>まずは<span class="nb">LINE</span>で、<br>困っていることを送ってください</h2>
+  <p class="lead">どのメニューが合うかをお返しします。ここまでは無料です。<br>
+    「これ、<span class="nb">AI</span>でなんとかなる？」の一言で大丈夫です。</p>
+  <!-- ▼ LINE公式を開設したら、下の「準備中」を <a class="btn" href="LINEのURL">LINEで相談する</a> に戻す -->
+  <p class="soon"><span class="nb">LINE公式アカウント</span>は、ただいま準備中です</p>
+  <p class="note">準備ができたら、ここから友だち追加できるようになります。<br>売り込みはしませんので、気軽にどうぞ。</p>
+</section>
+
+</main>
+
+<footer>
+  <p>パンダさんワークスのグッズは
+    <a href="https://suzuri.jp/pandasan-works">SUZURI</a>で販売しています。</p>
+  <p>趣味で作っているものは
+    <a href="https://fuyutosan.github.io/hangar-f/">こちら</a>にまとめています。</p>
+  <p><span class="nb">パンダさんワークス</span></p>
+</footer>
+
+</div>
+
+<!-- 日本語の折り返しを文節の切れ目に揃える（BudouX） -->
+<script type="module">
+  function tidyCJKWhitespace(root){
+    const CJK = /[　-ヿ㐀-䶿一-鿿ｦ-ﾟ]/;
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    let n;
+    while((n = walker.nextNode())){
+      n.nodeValue = n.nodeValue.replace(
+        /([^\s])[ \t]*\n[ \t]*([^\s])/g,
+        (m,a,b) => CJK.test(a) && CJK.test(b) ? a + b : a + ' ' + b
+      );
+    }
+  }
+  try{
+    const { loadDefaultJapaneseParser } =
+      await import('https://cdn.jsdelivr.net/npm/budoux@0.6.2/+esm');
+    const parser = loadDefaultJapaneseParser();
+    document.querySelectorAll('header, main, footer').forEach(el => {
+      tidyCJKWhitespace(el); parser.applyToElement(el);
+    });
+  }catch(e){ /* 読み込めなくてもCSSだけで最低限は効く */ }
+</script>
+
+</body>
+</html>
