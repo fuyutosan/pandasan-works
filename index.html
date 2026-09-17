@@ -4,12 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>パンダさんワークス｜AIに仕事を頼める人になって、本当にやりたいことに時間を使おう</title>
-<meta name="description" content="あなたの仕事を教材に、ChatGPTやClaudeなどのAIを、あなた自身が使えるようになるまで1対1で一緒に進めます。">
+<meta name="description" content="仕事・副業・趣味・個人活動など、あなたがAIでやりたいことを、あなた自身がAIを使って実現できるようになるまで1対1で一緒に進めます。">
 
 <!-- ============================================================
      差し替えるのはここだけ
      ① ロゴ …… assets/logo.png（屋号はロゴ画像に入っている）
-     ② LINE … いまは「準備中」表示。開設したらボタンに戻す（下のコメント参照）
+     ② 無料相談 … いまは「フォーム準備中」表示。フォームができたら #consult の .soon をボタンに戻す
+     ※ 詳しい利用ルール rules.html／特商法 tokushoho.html／プライバシー privacy.html
      ============================================================ -->
 
 <style>
@@ -28,29 +29,30 @@ h1,h2,h3,h4{ text-wrap:balance; }
   --line:#e3e3e3;
 }
 *{ box-sizing:border-box; }
-html{ -webkit-text-size-adjust:100%; }
+html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
 body{
   margin:0;
   font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Yu Gothic",system-ui,sans-serif;
   font-size:17px; line-height:1.9; color:var(--ink); background:var(--bg);
 }
 .shell{ max-width:720px; margin:0 auto; padding:0 20px; }
-section{ padding:44px 0; border-top:1px solid var(--line); }
+section{ padding:44px 0; border-top:1px solid var(--line); scroll-margin-top:12px; }
 h2{ font-size:1.28rem; margin:0 0 6px; letter-spacing:.02em; }
 h2 + .lead{ margin:0 0 22px; color:var(--ink-sub); font-size:.95rem; }
 p{ margin:0 0 1em; }
+a{ color:var(--ink); }
 
 /* ---------- ヘッダー ---------- */
 header{ padding:40px 0 34px; text-align:center; }
 .logo{ width:min(210px, 62%); height:auto; margin:0 auto 20px; display:block; }
 h1{ font-size:1.72rem; line-height:1.6; margin:0 0 14px; font-weight:700; }
-.tagline{ color:var(--ink-sub); font-size:1rem; margin:0; }
+.tagline{ color:var(--ink-sub); font-size:1rem; margin:0 0 22px; }
 
-/* ---------- カード（進め方） ---------- */
+/* ---------- カード ---------- */
 .cards{ display:grid; gap:14px; }
 .card{ background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:20px 22px; }
 .card h3{ margin:0 0 8px; font-size:1.05rem; display:flex; align-items:center; gap:12px; }
-/* 番号はパンダさんの顔：白い顔＋黒い耳（ロゴと同じ配色） */
+/* 番号はパンダさんの顔：白い顔＋黒い耳（ロゴと同じ配色）。順番がある「ご利用の流れ」だけで使う */
 .card h3 .num{
   position:relative; isolation:isolate; flex:none;
   width:28px; height:26px; margin-top:4px;
@@ -83,46 +85,58 @@ h1{ font-size:1.72rem; line-height:1.6; margin:0 0 14px; font-weight:700; }
 .box ul{ margin:0; padding-left:1.15em; }
 .box li{ margin:.35em 0; }
 .box p{ margin:0; }
-.box + .box{ margin-top:12px; }
 .after{ margin:22px 0 0; font-size:.96rem; }
 
-/* ---------- ゴール ---------- */
+/* ---------- 考え方 ---------- */
 .goal{ font-size:1.1rem; font-weight:700; line-height:1.8; margin:0 0 14px; }
 
-/* ---------- 料金 ---------- */
-.plan{ background:var(--paper); border:1px solid var(--line);
-  border-radius:14px; padding:20px 22px; margin-bottom:14px; }
-.plan.is-main{ border:2px solid var(--ink); }
-.plan-head{ display:flex; justify-content:space-between; align-items:baseline;
-  gap:12px; flex-wrap:wrap; margin-bottom:8px; }
-.plan-name{ font-weight:700; font-size:1.06rem; }
-.plan-price{ font-weight:700; font-size:1.24rem; }
-.plan-price small{ font-size:.76rem; font-weight:400; color:var(--ink-sub); }
-.badge{ display:inline-block; font-size:.72rem; background:var(--ink); color:#fff;
-  border-radius:999px; padding:2px 10px; margin-left:8px; vertical-align:middle; }
-.plan ul{ margin:0; padding-left:1.15em; font-size:.94rem; color:var(--ink-sub); }
-.plan li{ margin:.25em 0; }
-.plans-sub{ margin:26px 0 12px; font-size:.95rem; font-weight:700; }
+/* ---------- 3つのプラン ---------- */
+.plans{ display:grid; gap:18px; margin-top:22px; }
+.plan{ background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:22px 22px 18px; }
+.plan-name{ margin:0 0 10px; font-size:1.12rem; }
+.plan-price{ display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 14px;
+  padding:0 0 14px; margin:0 0 4px; border-bottom:1px solid var(--line); }
+.plan-price .yen{ font-weight:700; font-size:1.3rem; }
+.plan-price .yen small{ font-size:.76rem; font-weight:400; color:var(--ink-sub); }
+.plan-price .times{ font-weight:700; font-size:1rem; }
+.tags{ display:flex; flex-wrap:wrap; gap:6px; margin:10px 0 0; padding:0; list-style:none; width:100%; }
+.tags li{ font-size:.78rem; line-height:1.5; border:1px solid var(--ink); border-radius:999px; padding:3px 11px; background:#fff; }
+.tags li.is-strong{ background:var(--ink); color:#fff; }
+.plan h4{ margin:16px 0 4px; font-size:.84rem; letter-spacing:.06em; color:var(--ink-sub); }
+.plan h4::before{ content:""; display:inline-block; width:10px; height:10px; border-radius:50%;
+  background:var(--ink); margin-right:8px; vertical-align:0; }
+.plan ul.for{ margin:0; padding-left:1.15em; font-size:.94rem; }
+.plan ul.for li{ margin:.2em 0; }
+.plan .aim{ margin:0; font-size:.98rem; font-weight:700; line-height:1.8; }
+.plan p{ margin:0; font-size:.94rem; }
+.plan p + p{ margin-top:.5em; }
+.plan p.sub{ color:var(--ink-sub); }
 
-/* ---------- 問い合わせ ---------- */
-.cta{ text-align:center; }
-.btn{ display:inline-block; background:var(--ink); color:#fff; text-decoration:none;
-  font-weight:700; font-size:1.04rem; padding:15px 38px; border-radius:999px; margin:8px 0 12px; }
-.btn:hover{ background:#333; }
-.cta .note{ font-size:.88rem; color:var(--ink-sub); }
+/* ---------- 無料相談 ---------- */
+.checks{ margin:0 0 18px; padding-left:1.15em; }
+.checks li{ margin:.3em 0; }
+.cta-box{ text-align:center; margin-top:26px; }
 .soon{ display:inline-block; background:#f0f0f0; color:var(--ink-sub); font-weight:700;
-  font-size:.98rem; padding:13px 28px; border-radius:999px; margin:8px 0 12px; }
+  font-size:.98rem; padding:13px 28px; border-radius:999px; margin:8px 0 4px; }
+.btn-line{ display:inline-block; border:2px solid var(--ink); color:var(--ink); text-decoration:none;
+  font-weight:700; font-size:1rem; padding:11px 30px; border-radius:999px; background:#fff; }
+.btn-line:hover{ background:var(--ink); color:#fff; }
+.hero-note{ display:block; margin-top:10px; font-size:.86rem; color:var(--ink-sub); }
+.more{ text-align:center; margin:26px 0 0; }
 
 /* ---------- フッター ---------- */
 footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
   color:var(--ink-sub); border-top:1px solid var(--line); }
-footer a{ color:var(--ink); }
+.foot-nav{ list-style:none; padding:0; margin:0 0 22px; display:flex; flex-wrap:wrap;
+  justify-content:center; gap:4px 18px; }
+.foot-nav li{ margin:0; }
 
 /* ---------- スマホ ---------- */
 @media (max-width:700px){
   header{ padding:32px 0 28px; }
   .logo{ width:160px; }
   h1{ font-size:1.46rem; }
+  .plan{ padding:20px 18px 16px; }
 }
 
 /* ---------- 印刷 ---------- */
@@ -138,59 +152,42 @@ footer a{ color:var(--ink); }
 <header>
   <img class="logo" src="assets/logo.png" alt="パンダさんワークス">
   <h1><span class="nb">AI</span>に仕事を頼める人になって、<br>本当にやりたいことに<span class="nb">時間を使おう。</span></h1>
-  <p class="tagline">あなたの仕事に合わせて、<br><span class="nb">AI</span>を自分で使えるようになるまで伴走します。</p>
+  <p class="tagline">仕事でも、副業でも、趣味や個人活動でも。<br>あなたが<span class="nb">AI</span>でやりたいことを、<br>あなた自身が<span class="nb">AI</span>を使って実現できるようになるまで、<span class="nb">1対1</span>で一緒に進めます。</p>
+  <a class="btn-line" href="#consult">まずは無料相談</a>
+  <span class="hero-note"><span class="nb">無料相談・</span><span class="nb">お問い合わせフォーム</span>は準備中です</span>
 </header>
 
 <main>
 
 <section>
   <h2>こんな方と、一緒に進めます</h2>
-  <p class="lead"><span class="nb">ChatGPT</span>を触ったことはある。画像を作ったり、雑談や相談をしたり、調べものに使ったりもしている。<br>
-    でも、自分の仕事にどう使えばいいのかは分からない。<br>
-    そんな方が中心です。<span class="nb">AI</span>がまったく初めての方も大丈夫です。</p>
+  <p class="lead">いまの<span class="nb">AI</span>との付き合い方は、人それぞれです。<br>仕事・副業・個人事業だけでなく、趣味や個人活動でもご利用いただけます。</p>
   <ul class="list">
-    <li><strong>副業で事業をしている方</strong><span class="sub">本業の合間でも続くように、オンラインを中心に進めます。</span></li>
-    <li><strong>個人事業主の方</strong><span class="sub">うかがって、実際の仕事をとなりで見ながら進めます。</span></li>
-    <li><strong>法人の方</strong><span class="sub">法人向けのプランは、今後の展開を予定しています。</span></li>
+    <li><strong><span class="nb">AI</span>をほとんど使ったことがない・何から始めればいいか分からない</strong></li>
+    <li><strong><span class="nb">ChatGPT</span>などは使っているが、思った通りに活用できていない</strong></li>
+    <li><strong>チャット型<span class="nb">AI</span>は使えていて、次は実際の操作や仕事も<span class="nb">AI</span>に任せたい</strong></li>
   </ul>
 </section>
 
 <section>
-  <h2>目指すところ</h2>
-  <p class="goal">あなたが、自分の仕事を<span class="nb">AI</span>に相談したり、指示したりできるようになること。</p>
-  <p>簡単な仕事なら、その場で1つ改善できてしまうこともあります。大きな自動化のように時間がかかるものは、「何を作るか」「どう進めるか」を決めて、最初の一歩と、そのあと自分で続ける方法までを一緒にやります。</p>
-  <p>大事なのは、できあがったものより、次から自分で<span class="nb">AI</span>を使って進められることです。<br>
-    その先で、本当にやりたいことに使える時間を増やしていきましょう。</p>
-</section>
+  <h2>パンダさんワークスの考え方・進め方</h2>
+  <p class="goal">あなた自身が<span class="nb">AI</span>を使って、やりたいことを実現できるようになるまで、一緒に進めます。</p>
+  <p>パンダさんワークスは、<span class="nb">AI</span>で作業を代わりに引き受けることを中心としたサービスではありません。あなたの仕事・副業・趣味・個人活動などを<span class="nb">AI</span>へ持ち込み、あなた自身の手で進めていきます。</p>
 
-<section>
-  <h2>進め方</h2>
-  <p class="lead">教材は、あなたの実際の仕事です。順番や時間のかけ方は、人によって変わります。</p>
   <div class="cards">
     <div class="card">
-      <h3><span class="num">1</span>あなたに合うAIを、使える状態にする</h3>
-      <p>何を使えばいいかを一緒に選んで、あなたのPCと、あなたのアカウントで使えるようにします。<span class="nb">ChatGPT</span>や<span class="nb">Claude</span>など、合うものは人によって違います。</p>
+      <h3>運転するのは、あなた</h3>
+      <p>イメージは、あなたが運転し、パンダさんワークスが助手席でナビをする形です。あなたのスマホ・<span class="nb">PC</span>・<span class="nb">AI</span>アカウントを、基本的にあなた自身が操作します。</p>
     </div>
     <div class="card">
-      <h3><span class="num">2</span>あなたの仕事を、あなたの手でAIに頼む</h3>
-      <p>いま手が止まっている仕事を持ってきてください。指示を出す、結果を見る、直す。これを、あなたの手で繰り返します。代わりにやってしまうことはしません。</p>
+      <h3>決まったカリキュラムはありません</h3>
+      <p>決まった授業を順番に教えるスクールではありません。あなたが興味のあること、やりたいことを題材に進めます。</p>
     </div>
     <div class="card">
-      <h3><span class="num">3</span>うまくいったら、次も使える形にする</h3>
-      <p>うまくいったやり方は、次から一言で同じことができるように残します。一度できたことを、毎回説明し直さなくて済むようにします。</p>
+      <h3>提案はします。選ぶのは、あなたです</h3>
+      <p>合いそうな方法はこちらからご提案します。どれを選ぶかは、あなたが決めてください。</p>
     </div>
   </div>
-
-  <div class="box">
-    <h3><span class="nb">AI</span>がほとんど初めての方</h3>
-    <p>使うAIを選ぶところから始めます。必要なら契約をして、PCの環境を確かめ、基本の使い方と、自分の仕事をAIに相談するやり方までをやります。</p>
-  </div>
-  <div class="box">
-    <h3>もう<span class="nb">ChatGPT</span>などを使っている方</h3>
-    <p>基本の説明は短くして、1回目から実際の仕事を題材にします。</p>
-  </div>
-
-  <p class="after">そのあとは、同じ目線の仲間です。新しい困りごとが出てきたら、また気軽に相談してください。</p>
 </section>
 
 <section>
@@ -205,98 +202,134 @@ footer a{ color:var(--ink); }
   </ul>
 </section>
 
-<section>
-  <h2>料金</h2>
-  <p class="lead">仕事の困りごとは、これからも出てきます。<br>
-    そのたびに誰かへ頼むのではなく、自分で<span class="nb">AI</span>に頼めるようになるための料金です。</p>
+<section id="plans">
+  <h2>3つのプラン</h2>
+  <p class="lead">パンダさんワークスは、仕事や副業だけのサービスではありません。仕事・副業・個人事業・趣味・個人活動など、<span class="nb">AI</span>を使ってやってみたいことがあればご相談いただけます。<br>
+    3つのプランは、順番に受けるコースではありません。いまの状態や、やりたいことに合わせて選んでください。</p>
 
-  <div class="plan is-main">
-    <div class="plan-head">
-      <span class="plan-name">AI導入支援 4回チケット<span class="badge">基本</span></span>
-      <span class="plan-price"><span class="nb">49,800円</span><small>／税込</small></span>
-    </div>
-    <ul>
-      <li><span class="nb">60分×4回</span>。購入日から<span class="nb">60日間</span>使えます</li>
-      <li>1回ずつでも、同じ日に2回分を続けて（<span class="nb">120分</span>）でも使えます</li>
-      <li>決まった授業はありません。あなたの現在地に合わせて使う、導入の4時間です</li>
-      <li>チケットをお持ちの間は、公式<span class="nb">LINE</span>で何度でも相談できます</li>
-      <li>1対1で、訪問でもオンラインでも進められます</li>
-      <li>訪問の交通費は、<span class="nb">名古屋市内</span>なら料金に含みます。市外・県外はご相談ください（交通費はご負担いただきます）</li>
-      <li><span class="nb">ChatGPT</span>や<span class="nb">Claude</span>などの利用料は含みません。あなたのアカウントで契約していただきます</li>
-    </ul>
+  <div class="plans">
+
+    <article class="plan">
+      <h3 class="plan-name">AIはじめの一歩プラン</h3>
+      <div class="plan-price">
+        <span class="yen"><span class="nb">30,000円</span><small>（税込）</small></span>
+        <span class="times"><span class="nb">60分</span>×<span class="nb">3回</span></span>
+        <ul class="tags"><li>スマホだけでも利用可能</li></ul>
+      </div>
+      <h4>こんな方へ</h4>
+      <ul class="for">
+        <li><span class="nb">AI</span>をほとんど使っていない</li>
+        <li><span class="nb">ChatGPT</span>などを入れたが活用できていない</li>
+        <li>何を聞けばいいか分からない</li>
+        <li>基本から始めたい</li>
+      </ul>
+      <h4>目指すところ</h4>
+      <p class="aim">一人で<span class="nb">AI</span>に相談し、回答を修正しながら、自分が欲しい結果へ近づけられるようになる。</p>
+      <h4>進め方</h4>
+      <p>固定カリキュラムではなく、あなたが興味のあること・やりたいことを題材に進めます。</p>
+    </article>
+
+    <article class="plan">
+      <h3 class="plan-name">AI活用・並走プラン</h3>
+      <div class="plan-price">
+        <span class="yen"><span class="nb">50,000円</span><small>（税込）</small></span>
+        <span class="times"><span class="nb">60分</span>×<span class="nb">4回</span></span>
+        <ul class="tags"><li>スマホだけでも利用可能</li></ul>
+      </div>
+      <h4>こんな方へ</h4>
+      <ul class="for">
+        <li><span class="nb">ChatGPT</span>などは使っている</li>
+        <li>思った通りの結果にならない</li>
+        <li>やりたいことはあるが、進め方が分からない</li>
+        <li>一人だと途中で止まる</li>
+        <li>実際に作りたいもの・実現したいことがある</li>
+      </ul>
+      <h4>目指すところ</h4>
+      <p>あなたが実際にやりたいことを、<span class="nb">できる限り</span>完成まで一緒に進めます。</p>
+      <p class="aim">同時に、次から同じようなことを、あなた自身が<span class="nb">AI</span>で進められるようになることを目指します。</p>
+      <h4>進め方</h4>
+      <p>あなたのスマホ・<span class="nb">PC</span>・<span class="nb">AI</span>アカウントを、あなた自身が操作します。パンダさんワークスは基本的に、助言・道案内・確認・<span class="nb">AI</span>への相談方法の支援を行います。</p>
+      <p class="sub">週1回程度、<span class="nb">1〜1.5か月</span>ほどで4回を終えるペースが目安です。</p>
+    </article>
+
+    <article class="plan">
+      <h3 class="plan-name">AIエージェント・自動化プラン</h3>
+      <div class="plan-price">
+        <span class="yen"><span class="nb">100,000円</span><small>（税込）</small></span>
+        <span class="times"><span class="nb">60分</span>×<span class="nb">5回</span></span>
+        <ul class="tags">
+          <li class="is-strong"><span class="nb">PC</span>必須</li>
+          <li>利用期限：支払い完了日から<span class="nb">2か月</span></li>
+        </ul>
+      </div>
+      <h4>こんな方へ</h4>
+      <ul class="for">
+        <li><span class="nb">AI</span>のチャットアプリは普段から使っているが、エージェントまでは使っていない</li>
+        <li>エージェントは使っているが、自動化まではできていない</li>
+      </ul>
+      <h4>目指すところ</h4>
+      <p><span class="nb">AI</span>に相談したあと、クリック・入力・転記・ブラウザ操作・ファイル操作・定型作業など、あなたが手作業で行っていることについて、</p>
+      <p class="aim"><span class="nb">AI</span>自身にも実際の操作・仕事をしてもらえる状態を目指します。</p>
+      <h4>進め方</h4>
+      <p>エージェントの導入と自動化は、別々の商品には分けていません。あなたの目的の達成に必要なところまで、一緒に進めます。固定カリキュラムはありません。</p>
+    </article>
+
   </div>
 
-  <div class="plan">
-    <div class="plan-head">
-      <span class="plan-name">60分相談</span>
-      <span class="plan-price"><span class="nb">9,800円</span><small>／1回・税込</small></span>
-    </div>
-    <ul>
-      <li>内容はおまかせです。困っていること、試してみたいこと、なんでも</li>
-      <li>導入支援のあとに、新しい困りごとが出てきたときにも</li>
-      <li>訪問でもオンラインでも進められます（交通費は4回チケットと同じ扱いです）</li>
-    </ul>
+  <p class="more">ご利用方法・キャンセルなどは<br><a href="rules.html">詳しい利用ルール</a>をご覧ください。</p>
+</section>
+
+<section id="consult">
+  <h2>まずは無料相談から</h2>
+  <p class="lead">「自分にはどのプランが合うんだろう？」<br>「<span class="nb">AI</span>でこんなこともできる？」<br>「やりたいことはあるけど、何から始めればいいか分からない」<br>そんな段階でも相談できます。</p>
+
+  <p>まずは<span class="nb">30分程度</span>の相談で、次のようなことを確認します。</p>
+  <ul class="checks">
+    <li>今どんな<span class="nb">AI</span>を使っているか</li>
+    <li><span class="nb">AI</span>でやってみたいこと</li>
+    <li>今困っていること</li>
+    <li>スマホ・<span class="nb">PC</span>などの環境</li>
+    <li>どこまで自分でできるようになりたいか</li>
+  </ul>
+  <p>内容を聞いたうえで、いまの状況や目的に合いそうなプラン・進め方を、パンダさんワークスからご提案します。</p>
+
+  <div class="box">
+    <p>無料相談は、実際の制作や作業を進めるための時間ではなく、<b>「これからどう進めるのがよさそうか」を一緒に整理する時間</b>です。</p>
+  </div>
+  <div class="box">
+    <p>オンライン相談は<span class="nb">30分程度</span>を基本とします。対面も相談可能です。</p>
   </div>
 
-  <p class="plans-sub">必要なときだけ</p>
-
-  <div class="plan">
-    <div class="plan-head">
-      <span class="plan-name">道具づくりの代行</span>
-      <span class="plan-price"><span class="nb">30,000円</span>〜<small>／1本・税込</small></span>
-    </div>
-    <ul>
-      <li>急いでいるときや、作る時間が取れないときに</li>
-      <li>基本は、ご自身で作れるようにお手伝いします</li>
-    </ul>
+  <div class="cta-box">
+    <!-- ▼ フォームができたら、下の「準備中」をフォームへのボタンに戻す（mailtoは使わない） -->
+    <p class="soon"><span class="nb">無料相談・</span><span class="nb">お問い合わせフォーム</span>は準備中です</p>
   </div>
 </section>
 
-<section>
-  <h2>ご相談について</h2>
-  <p class="lead">気持ちよく続けるために、先に決めさせてください。</p>
-
-  <div class="box">
-    <h3>訪問・オンラインは、事前予約制です</h3>
-    <ul>
-      <li>平日　<span class="nb">18〜22時</span></li>
-      <li>土日　<span class="nb">9〜22時</span></li>
-    </ul>
+<section id="flow">
+  <h2>ご利用の流れ</h2>
+  <p class="lead">お支払いは、銀行振込のみです。</p>
+  <div class="cards">
+    <div class="card"><h3><span class="num">1</span>無料相談</h3></div>
+    <div class="card"><h3><span class="num">2</span>利用するプランを決定</h3></div>
+    <div class="card"><h3><span class="num">3</span>初回日時を仮押さえ</h3></div>
+    <div class="card"><h3><span class="num">4</span>銀行振込</h3></div>
+    <div class="card"><h3><span class="num">5</span>入金確認後に正式予約</h3></div>
+    <div class="card"><h3><span class="num">6</span>サポート開始</h3></div>
   </div>
-
-  <div class="box">
-    <h3>4回チケット中の<span class="nb">LINE</span>相談</h3>
-    <ul>
-      <li>セッションで取り組んでいることを自分で触っていて、詰まったときに使ってください（「この画面になったけど、次はどうする？」「前回の指示を入れたら、こうなった」「この結果で合っている？」など）</li>
-      <li>新しい仕事を自動化したい、新しい仕組みを考えたい、じっくり相談したい、といったときは、チケットの1回か、60分相談でお受けします</li>
-      <li>4回分を使い切ったとき、または購入から<span class="nb">60日</span>が過ぎたときに、<span class="nb">LINE</span>相談も終わります。続けたいときは、新しいチケットをお求めください</li>
-      <li>お返事は、返せるときにお返しします（すぐに返せないこともあります）</li>
-    </ul>
-  </div>
-
-  <div class="box">
-    <h3>そのほか</h3>
-    <ul>
-      <li>お電話でのご相談は、予約したセッションの中でお願いしています</li>
-      <li>道具づくりの代行は、相談とは別のご依頼になります</li>
-    </ul>
-  </div>
-</section>
-
-<section class="cta">
-  <h2>まずは<span class="nb">LINE</span>で、<br>困っていることを送ってください</h2>
-  <p class="lead">どのメニューが合うかをお返しします。ここまでは無料です。<br>
-    「これ、<span class="nb">AI</span>でなんとかなる？」の一言で大丈夫です。</p>
-  <!-- ▼ LINE公式を開設したら、下の「準備中」を <a class="btn" href="LINEのURL">LINEで相談する</a> に戻す -->
-  <p class="soon"><span class="nb">LINE公式アカウント</span>は、ただいま準備中です</p>
-  <p class="note">準備ができたら、ここから友だち追加できるようになります。<br>売り込みはしませんので、気軽にどうぞ。</p>
 </section>
 
 </main>
 
 <footer>
-  <p>パンダさんワークスのグッズは
-    <a href="https://suzuri.jp/pandasan-works">SUZURI</a>で販売しています。</p>
+  <ul class="foot-nav">
+    <li><a href="rules.html">詳しい利用ルール</a></li>
+    <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
+    <li><a href="privacy.html">プライバシーポリシー</a></li>
+    <li><a href="#consult">お問い合わせ</a>（フォーム準備中）</li>
+  </ul>
+  <p>パンダさんワークスのグッズは、<a href="https://suzuri.jp/pandasan-works">SUZURI</a>で販売しています。<br>
+    <span class="nb">仲間のしるし</span>に、ひとつどうぞ。<span class="nb">活動の応援にもなります🐼</span></p>
   <p>趣味で作っているものは
     <a href="https://fuyutosan.github.io/hangar-f/">こちら</a>にまとめています。</p>
   <p><span class="nb">パンダさんワークス</span></p>
