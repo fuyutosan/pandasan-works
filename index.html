@@ -131,6 +131,18 @@ footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
   justify-content:center; gap:4px 18px; }
 .foot-nav li{ margin:0; }
 
+/* ---------- パンダさん：区切り線の上にいて、見えたときに1回だけころんと転がる ---------- */
+#plans, #consult, footer{ position:relative; }
+.roller{ position:absolute; top:-29px; width:36px; height:auto; opacity:.28; pointer-events:none; }
+.roller.to-right{ left:8%; }
+.roller.to-left{ right:8%; }
+.roller.is-rolled.to-right{ animation:roll-right 1.8s ease-in-out forwards; }
+.roller.is-rolled.to-left{ animation:roll-left 1.8s ease-in-out forwards; }
+@keyframes roll-right{ from{ transform:translateX(0) rotate(0); } to{ transform:translateX(114px) rotate(360deg); } }
+@keyframes roll-left{ from{ transform:translateX(0) rotate(0); } to{ transform:translateX(-114px) rotate(-360deg); } }
+/* 「動きを減らす」設定の人には、転がらずに座ったまま */
+@media (prefers-reduced-motion: reduce){ .roller.is-rolled.to-right, .roller.is-rolled.to-left{ animation:none; } }
+
 /* ---------- スマホ ---------- */
 @media (max-width:700px){
   header{ padding:32px 0 28px; }
@@ -203,6 +215,7 @@ footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
 </section>
 
 <section id="plans">
+  <img class="roller to-right" src="assets/panda-roll.png" alt="">
   <h2>3つのプラン</h2>
   <p class="lead">パンダさんワークスは、仕事や副業だけのサービスではありません。仕事・副業・個人事業・趣味・個人活動など、<span class="nb">AI</span>を使ってやってみたいことがあればご相談いただけます。<br>
     3つのプランは、順番に受けるコースではありません。いまの状態や、やりたいことに合わせて選んでください。</p>
@@ -280,6 +293,7 @@ footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
 </section>
 
 <section id="consult">
+  <img class="roller to-left" src="assets/panda-roll.png" alt="">
   <h2>まずは無料相談から</h2>
   <p class="lead">「自分にはどのプランが合うんだろう？」<br>「<span class="nb">AI</span>でこんなこともできる？」<br>「やりたいことはあるけど、何から始めればいいか分からない」<br>そんな段階でも相談できます。</p>
 
@@ -322,6 +336,7 @@ footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
 </main>
 
 <footer>
+  <img class="roller to-right" src="assets/panda-roll.png" alt="">
   <ul class="foot-nav">
     <li><a href="rules.html">詳しい利用ルール</a></li>
     <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
@@ -336,6 +351,19 @@ footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
 </footer>
 
 </div>
+
+<!-- パンダさん：区切り線の上のパンダさんが、画面に入ったら1回だけ転がる -->
+<script>
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('is-rolled'); io.unobserve(e.target); }
+    });
+  },{threshold:1, rootMargin:'0px 0px -25% 0px'});
+  document.querySelectorAll('.roller').forEach(function(im){ io.observe(im); });
+})();
+</script>
 
 <!-- 日本語の折り返しを文節の切れ目に揃える（BudouX） -->
 <script type="module">
