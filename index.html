@@ -26,6 +26,7 @@
      ※ 詳しい利用ルール rules.html／特商法 tokushoho.html／プライバシー privacy.html
      ============================================================ -->
 
+<script>if(/[?&]motion=on/.test(location.search))document.documentElement.classList.add("force-motion");</script>
 <style>
 /* ---------- 改行の土台（4点セット・1つでも欠くと端末で崩れる） ---------- */
 body{ word-break:keep-all; overflow-wrap:anywhere; text-wrap:pretty; }
@@ -55,9 +56,56 @@ h2 + .lead{ margin:0 0 22px; color:var(--ink-sub); font-size:.95rem; }
 p{ margin:0 0 1em; }
 a{ color:var(--ink); }
 
-/* ---------- ヘッダー ---------- */
-header{ padding:40px 0 34px; text-align:center; }
-.logo{ width:min(210px, 62%); height:auto; margin:0 auto 20px; display:block; }
+/* ---------- ヒーロー（いちばん上）。ロゴが転がってきて、ドゥン→ピョコンと着く（説明動画の冒頭と同じ動き） ---------- */
+.hero{ --logo:170px; text-align:center; padding:56px 20px 30px; overflow-x:clip; }
+.hero-in{ max-width:1040px; margin:0 auto; }
+.logo-stage{ position:relative; width:var(--logo); margin:0 auto 30px; }
+.logo-track{ position:relative; animation:hero-x 1.6s cubic-bezier(.15,.55,.3,1) .15s both; }
+.logo-hop{ transform-origin:50% 100%; animation:hero-hop 2.85s linear .15s both; }
+.logo-disc{ width:100%; aspect-ratio:1; border-radius:50%; border:6px solid var(--ink); background:#fff;
+  overflow:hidden; display:grid; place-items:center; animation:hero-spin 1.6s cubic-bezier(.15,.55,.3,1) .15s both; }
+.logo{ width:94%; height:auto; display:block; }
+.logo-shadow{ position:absolute; left:8%; right:8%; bottom:-16px; height:16px; border-radius:50%;
+  background:rgba(0,0,0,.14); filter:blur(3px); animation:hero-shadow 2.85s linear .15s both; }
+.pyo{ position:absolute; top:-40px; left:calc(50% + 56px); font-weight:700; font-size:1.05rem; letter-spacing:.02em;
+  white-space:nowrap; opacity:0; pointer-events:none; transform-origin:0 100%; animation:hero-pyo 1.3s ease-out 2.1s both; }
+@keyframes hero-x{ from{ transform:translateX(calc(-50vw - 130px)); } to{ transform:none; } }
+@keyframes hero-spin{ from{ transform:rotate(-720deg); } to{ transform:none; } }
+@keyframes hero-hop{
+  0%{ transform:none; animation-timing-function:cubic-bezier(.2,.6,.4,1); }
+  5.6%{ transform:translateY(-26px); animation-timing-function:cubic-bezier(.6,0,.8,.4); }
+  11.2%{ transform:none; animation-timing-function:cubic-bezier(.2,.6,.4,1); }
+  16.8%{ transform:translateY(-20px); animation-timing-function:cubic-bezier(.6,0,.8,.4); }
+  22.4%{ transform:none; animation-timing-function:cubic-bezier(.2,.6,.4,1); }
+  28%{ transform:translateY(-14px); animation-timing-function:cubic-bezier(.6,0,.8,.4); }
+  33.7%{ transform:none; animation-timing-function:cubic-bezier(.2,.6,.4,1); }
+  39.3%{ transform:translateY(-9px); animation-timing-function:cubic-bezier(.6,0,.8,.4); }
+  44.9%{ transform:none; animation-timing-function:cubic-bezier(.2,.6,.4,1); }
+  50.5%{ transform:translateY(-4px); animation-timing-function:cubic-bezier(.6,0,.8,.4); }
+  56.1%{ transform:none; animation-timing-function:ease-out; }
+  59.6%{ transform:scale(1.14,.86); animation-timing-function:ease-in-out; }          /* ドゥン：着いてむにっとつぶれる */
+  68.4%{ transform:none; animation-timing-function:cubic-bezier(.2,.6,.4,1); }
+  76.3%{ transform:translateY(-46px) scale(.96,1.05); animation-timing-function:cubic-bezier(.6,0,.8,.4); }  /* ピョコン */
+  84.2%{ transform:none; animation-timing-function:ease-out; }
+  89%{ transform:scale(1.07,.93); animation-timing-function:ease-in-out; }
+  100%{ transform:none; }
+}
+@keyframes hero-shadow{
+  0%{ opacity:.6; transform:none; }
+  5.6%,16.8%,28%,39.3%,50.5%{ opacity:.45; transform:scaleX(.85); }
+  11.2%,22.4%,33.7%,44.9%,56.1%{ opacity:.6; transform:none; }
+  59.6%{ opacity:.8; transform:scaleX(1.15); }
+  68.4%{ opacity:.6; transform:none; }
+  76.3%{ opacity:.3; transform:scaleX(.6); }
+  84.2%,100%{ opacity:.6; transform:none; }
+}
+@keyframes hero-pyo{
+  0%{ opacity:0; transform:scale(.4) rotate(9deg); }
+  16%{ opacity:1; transform:scale(1.25) rotate(9deg); }
+  30%{ opacity:1; transform:scale(1) rotate(9deg); }
+  75%{ opacity:1; transform:scale(1) rotate(9deg); }
+  100%{ opacity:0; transform:scale(1) rotate(9deg); }
+}
 h1{ font-size:1.72rem; line-height:1.6; margin:0 0 14px; font-weight:700; }
 .tagline{ color:var(--ink-sub); font-size:1rem; margin:0 0 22px; }
 
@@ -177,6 +225,22 @@ footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
   justify-content:center; gap:4px 18px; }
 .foot-nav li{ margin:0; }
 
+/* ---------- ちょっとした反応（遊び心）：触れたところが、ぴょこっと持ち上がる ---------- */
+.works a, .plan, .examples li, .card, .day > div, .btn-line, .btn-fill{
+  transition:transform .24s cubic-bezier(.3,1.4,.5,1), box-shadow .24s ease, border-color .2s ease, background .2s ease, color .2s ease; }
+.works img{ transition:transform .4s ease; }
+/* 触れたときの小さな持ち上がりは、動きを減らす設定の人にも出す（大きく動かないため）。ただし、ぽよんと弾む動きだけはやめて、すっと変える */
+@media (prefers-reduced-motion: reduce){ html:not(.force-motion) :is(.works a, .plan, .examples li, .card, .day > div, .btn-line, .btn-fill){ transition-timing-function:ease; transition-duration:.12s; } }
+.plan:hover, .examples li:hover, .card:hover, .day > div:hover{ border-color:var(--ink); }
+@media (hover:hover){
+  .plan:hover{ transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.10); }
+  .examples li:hover, .card:hover, .day > div:hover{ transform:translateY(-2px); box-shadow:0 6px 14px rgba(0,0,0,.08); }
+  .works a:hover{ transform:translateY(-6px) rotate(-.8deg); box-shadow:0 12px 24px rgba(0,0,0,.14); }
+  .works li:nth-child(even) a:hover{ transform:translateY(-6px) rotate(.8deg); }
+  .works a:hover img{ transform:scale(1.05); }
+  .btn-fill:hover, .btn-line:hover{ transform:translateY(-2px) scale(1.04); }
+}
+
 /* ---------- パンダさん：区切り線の上にいて、見えたときに1回だけころんと転がる ---------- */
 #plans, #consult, footer{ position:relative; }
 .roller{ position:absolute; top:-29px; width:36px; height:auto; opacity:.28; pointer-events:none; }
@@ -187,14 +251,23 @@ footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
 @keyframes roll-right{ from{ transform:translateX(0) rotate(0); } to{ transform:translateX(114px) rotate(360deg); } }
 @keyframes roll-left{ from{ transform:translateX(0) rotate(0); } to{ transform:translateX(-114px) rotate(-360deg); } }
 /* 「動きを減らす」設定の人には、転がらずに座ったまま */
-@media (prefers-reduced-motion: reduce){ .roller.is-rolled.to-right, .roller.is-rolled.to-left{ animation:none; } }
+@media (prefers-reduced-motion: reduce){
+  html:not(.force-motion) :is(.roller.is-rolled.to-right, .roller.is-rolled.to-left, .logo-track, .logo-hop, .logo-disc, .logo-shadow, .pyo){ animation:none; }
+}
 
 /* ---------- スマホ ---------- */
 @media (max-width:700px){
-  header{ padding:32px 0 28px; }
-  .logo{ width:160px; }
+  .hero{ padding-top:52px; padding-bottom:26px; }
   h1{ font-size:1.46rem; }
   .plan{ padding:20px 18px 16px; }
+}
+/* パソコン（画面が広いとき）：ヒーローを横に広げて、1行で読めるようにする。スマホは端末の判定ではなく「画面の幅」で切り替わる */
+@media (min-width:900px){
+  .hero{ --logo:180px; padding:52px 40px 32px; }
+  .hero .m{ display:none; }
+  h1{ font-size:2.5rem; margin-bottom:16px; }
+  .tagline{ font-size:1.12rem; }
+  .pyo{ font-size:1.2rem; left:calc(50% + 64px); }
 }
 
 /* ---------- 印刷 ---------- */
@@ -205,15 +278,23 @@ footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
 </head>
 <body>
 
-<div class="shell">
-
-<header>
-  <img class="logo" src="assets/logo.png" alt="パンダさんワークス">
-  <h1><span class="nb">ChatGPT</span>を、<br>あなたの<span class="nb">相棒に。</span></h1>
-  <p class="tagline">仕事の書類も、お店のメモも、趣味の記録も。<br>自分で頼めるようになるまで、<br><span class="nb">1対1</span>でとなりにいます。</p>
-  <a class="btn-line" href="#consult">まずは無料相談</a>
-  <span class="hero-note">ご相談は無料です。<span class="nb">フォームからどうぞ。</span></span>
+<header class="hero">
+  <div class="hero-in">
+    <div class="logo-stage">
+      <div class="logo-track">
+        <span class="logo-shadow" aria-hidden="true"></span>
+        <div class="logo-hop"><div class="logo-disc"><img class="logo" src="assets/logo.png" alt="パンダさんワークス" width="640" height="640"></div></div>
+      </div>
+      <span class="pyo" aria-hidden="true"><span class="nb">ピョコン！</span></span>
+    </div>
+    <h1><span class="nb">ChatGPT</span>を、<br class="m">あなたの<span class="nb">相棒に。</span></h1>
+    <p class="tagline">仕事の書類も、お店のメモも、趣味の記録も。<br>自分で頼めるようになるまで、<br class="m"><span class="nb">1対1</span>でとなりにいます。</p>
+    <a class="btn-line" href="#consult">まずは無料相談</a>
+    <span class="hero-note">ご相談は無料です。<span class="nb">フォームからどうぞ。</span></span>
+  </div>
 </header>
+
+<div class="shell">
 
 <main>
 
