@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>パンダさんワークス｜困りごと、ひとつ形にします。</title>
-<meta name="description" content="ホームページ、動画、業務改善の道具、作業の自動化。ChatGPTなどを使って、あなたの困りごとを1つ形にします。1万円〜。">
+<title>パンダさんワークス｜ChatGPTを、あなたの相棒に。</title>
+<meta name="description" content="仕事の書類も、お店のメモも、趣味の記録も。ChatGPTなどに自分で頼んで仕上げられるように、1回60分・1対1で一緒に進めます。">
 <!-- シェアされたときに出る画像と文（OGP） -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="パンダさんワークス">
-<meta property="og:title" content="パンダさんワークス｜困りごと、ひとつ形にします。">
-<meta property="og:description" content="ホームページ、動画、業務改善の道具、作業の自動化。ChatGPTなどを使って、あなたの困りごとを1つ形にします。1万円〜。">
-<meta property="og:url" content="https://pandasan-works.pages.dev/">
+<meta property="og:title" content="パンダさんワークス｜ChatGPTを、あなたの相棒に。">
+<meta property="og:description" content="仕事の書類も、お店のメモも、趣味の記録も。ChatGPTなどに自分で頼んで仕上げられるように、1回60分・1対1で一緒に進めます。">
+<meta property="og:url" content="https://pandasan-works.pages.dev/banso.html">
 <meta property="og:image" content="https://pandasan-works.pages.dev/assets/ogp.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="パンダさんワークスのロゴ。ノートパソコンに向かうパンダさん">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://pandasan-works.pages.dev/">
+<link rel="canonical" href="https://pandasan-works.pages.dev/banso.html">
 
 <!-- ============================================================
      差し替えるのはここだけ
@@ -157,9 +157,6 @@ h1{ font-size:1.72rem; line-height:1.6; margin:0 0 14px; font-weight:700; }
 .examples b{ display:block; font-size:.98rem; margin-bottom:2px; }
 .note{ font-size:.86rem; color:var(--ink-sub); margin:14px 0 0; }
 
-/* ---------- つくれるもの：たとえばの一行 ---------- */
-.examples small{ display:block; margin-top:6px; font-size:.82rem; color:var(--ink-sub); line-height:1.6; }
-
 /* ---------- 1回の様子 ---------- */
 .day{ display:grid; gap:14px; margin:0; }
 .day > div{ background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:16px 20px; }
@@ -245,7 +242,7 @@ footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
 }
 
 /* ---------- パンダさん：区切り線の上にいて、見えたときに1回だけころんと転がる ---------- */
-#plans, #menu, #consult, footer{ position:relative; }
+#plans, #consult, footer{ position:relative; }
 .roller{ position:absolute; top:-29px; width:36px; height:auto; opacity:.28; pointer-events:none; }
 .roller.to-right{ left:8%; }
 .roller.to-left{ right:8%; }
@@ -290,48 +287,101 @@ footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
       </div>
       <span class="pyo" aria-hidden="true"><span class="nb">ピョコン！</span></span>
     </div>
-    <h1>困りごと、<br class="m"><span class="nb">ひとつ形にします。</span></h1>
-    <p class="tagline">ホームページ、動画、<br class="m"><span class="nb">毎日の作業を楽にする道具。</span><br><span class="nb">ChatGPT</span>などを使って、<br class="m">あなたの困りごとを<span class="nb">1つ、形にします。</span></p>
+    <h1><span class="nb">ChatGPT</span>を、<br class="m">あなたの<span class="nb">相棒に。</span></h1>
+    <p class="tagline">仕事の書類も、お店のメモも、趣味の記録も。<br>自分で<span class="nb">ChatGPT</span>に頼んで、<br class="m"><span class="nb">仕上げられるように。</span></p>
     <a class="btn-line" href="#consult">まずは無料相談</a>
-    <span class="hero-note"><span class="nb">1万円〜</span>・見ながら進めることも、おまかせすることもできます。<br class="m">ご相談は無料です。</span>
+    <span class="hero-note">進めるのは<span class="nb">1対1</span>・<span class="nb">1回60分</span>。<br class="m">ご相談は無料です。<span class="nb">フォームからどうぞ。</span></span>
   </div>
 </header>
 
 <div class="shell">
 
+<p class="more" style="margin:22px 0 0">ホームページや動画などを、<br class="m">つくってほしい方は<a href="./">こちら</a></p>
+
 <main>
 
-<section id="menu">
-  <img class="roller to-right" src="assets/panda-roll.png" alt="">
-  <h2>つくれるもの</h2>
-  <p class="lead">困っていること1つを、形にします。<br>どれも <b>1万円〜</b>（つくるものによって変わります）。</p>
-  <ul class="examples">
-    <li><b>ホームページ</b>お店や活動を紹介するページ。メニュー・営業時間・地図をわかりやすく伝えます。<br><small>たとえば：お店のホームページ</small></li>
-    <li><b>動画</b>説明や紹介の短い動画。見ているうちに伝わる形にします。<br><small>たとえば：サービスの紹介動画</small></li>
-    <li><b>業務改善の道具</b>手間のかかる作業を、楽にする小さな道具。<br><small>たとえば：注文メモを表にまとめる、請求書づくり、毎月の集計</small></li>
-    <li><b>作業の自動化</b>決まった作業を、自動で回す仕組み。<br><small>たとえば：毎朝の情報をまとめて届ける、毎月の書き写し</small></li>
+<section>
+  <h2>こんな方と、一緒に進めます</h2>
+  <p class="lead">いまの使い方は、人それぞれです。<br>仕事・副業・お店だけでなく、趣味や個人の活動でもご利用いただけます。</p>
+  <ul class="list">
+    <li><strong>ほとんど使ったことがない・何から始めればいいか分からない</strong></li>
+    <li><strong><span class="nb">ChatGPT</span>などは使っているが、思った通りに使いこなせていない</strong></li>
+    <li><strong><span class="nb">ChatGPT</span>などは使えていて、次はクリックや入力などの作業も任せたい</strong></li>
   </ul>
-  <p class="note"><span class="nb">60分以内</span>で終わる小さなものが、1万円の目安です。それより大きなものは、ご相談のあとに見積もりをお出しします。内容によっては対応が難しい場合もあります。</p>
 </section>
 
 <section>
-  <h2>進め方は、2通り</h2>
-  <p class="lead">無料相談で、どちらにするか決めます。</p>
+  <h2>たとえば、こんなことに</h2>
+  <p class="lead">持ち込めるテーマの例です。あなたの「これ、できるかな？」が、そのまま題材になります。</p>
+  <ul class="examples">
+    <li><b>家庭菜園の記録</b>写真とメモから、育て方の記録表をつくる</li>
+    <li><b>お店の注文メモ</b>手書きのメモを撮って、表にまとめる</li>
+    <li><b>町内会の冊子</b>集めた話を、読みやすい文章に整える</li>
+    <li><b>推し活</b>出演情報や更新を、毎朝まとめて届ける</li>
+    <li><b>ブログ・note</b>自分らしい文章になる頼み方を見つける</li>
+    <li><b>職場の転記</b>毎月の集計や、紙からの入力を楽にする</li>
+    <li><b>請求書づくり</b>いつもの請求書を、ひな形から手早くつくる</li>
+    <li><b>お店のホームページ</b>メニューや営業時間を伝えるページをつくる</li>
+  </ul>
+  <p class="note">内容によっては対応が難しい場合もあります。まずは無料相談で、やってみたいことをお聞かせください。</p>
+</section>
+
+<section>
+  <h2>パンダさんワークスの考え方・進め方</h2>
+  <p class="goal">あなた自身の手で、やりたいことを形にできるようになるまで、一緒に進めます。</p>
+  <p>作業を代わりに引き受けるサービスではありません。あなたの仕事・趣味・活動を持ってきてもらい、あなた自身が<span class="nb">ChatGPT</span>などに頼みながら進めていきます。</p>
+
   <div class="cards">
     <div class="card">
-      <h3>目の前で、見ながら</h3>
-      <p>あなたの目の前で、つくります。つくり方も見られます。基本は、<span class="nb">その1時間</span>でやりきります。終わらないときは、追加の時間をとるか、持ち帰るかを相談します。</p>
+      <h3>運転するのは、あなた</h3>
+      <p>あなたが運転し、パンダさんワークスは助手席でナビをします。操作するのは、あなたのスマホやパソコン。こちらは「次はここを押して」「こう頼むと伝わりますよ」と、となりで道案内をします。</p>
     </div>
     <div class="card">
-      <h3>おまかせ（持ち帰り）</h3>
-      <p>内容をうかがって、見積もりをお出しします。納得いただけたら、持ち帰ってつくって、納品します。お忙しい方に向いています。</p>
+      <h3>教材は、あなたの「やってみたい」</h3>
+      <p>決まった授業を順番に教えるスクールではありません。あなたが持ってきたことを題材に進めるので、終わったあとも、そのまま自分の生活や仕事で使えます。</p>
+    </div>
+    <div class="card">
+      <h3>提案はします。選ぶのは、あなたです</h3>
+      <p>合いそうな方法はこちらからご提案します。どれを選ぶかは、あなたが決めてください。</p>
     </div>
   </div>
 </section>
 
+<section id="day">
+  <h2>1回<span class="nb">60分</span>の様子</h2>
+  <p class="lead">はじめての方でも、準備はほとんどいりません。</p>
+  <dl class="day">
+    <div>
+      <dt>どこで</dt>
+      <dd>対面なら、となりの席で。オンラインなら、<span class="nb">Zoom</span>・<span class="nb">Google Meet</span>・<span class="nb">Microsoft Teams</span>・<span class="nb">LINE</span>などで、画面を見せてもらいながら進めます。ほかのアプリも相談できます。</dd>
+    </div>
+    <div>
+      <dt>いつ</dt>
+      <dd>毎日<span class="nb">9〜21時</span>のあいだで、ご都合に合わせて予約します。</dd>
+    </div>
+    <div>
+      <dt>用意するもの</dt>
+      <dd><ul>
+        <li>いつも使っているスマホか、パソコン</li>
+        <li><span class="nb">ChatGPT</span>などにログインできる状態（まだ使っていなければ、始めるところから一緒に）</li>
+        <li>やってみたいことのメモ（なくても大丈夫です）</li>
+      </ul></dd>
+    </div>
+    <div>
+      <dt>60分の流れ（例）</dt>
+      <dd><ul>
+        <li>今日やりたいことを聞かせてもらう</li>
+        <li>あなたが操作して、こちらはとなりで道案内</li>
+        <li>最後に、次から一人でやるときのコツを確かめる</li>
+      </ul></dd>
+    </div>
+  </dl>
+</section>
+
 <section>
   <h2>つくったもの</h2>
-  <p class="lead">どれも、<span class="nb">ChatGPT</span>や<span class="nb">Claude</span>などと相談しながら、自分でつくったものです。ここに載せているのは、その一部です。押すと、それぞれのページが開きます。</p>
+  <p class="lead">どれも、<span class="nb">ChatGPT</span>や<span class="nb">Claude</span>などと相談しながら、自分でつくったものです。ここに載せているのは、その一部です。押すと、それぞれのページが開きます。<br>
+    最初からここを目指す必要はありません。はじめは、1つの頼み方からです。</p>
   <ul class="works">
     <li><a href="https://pandasan-samples.pages.dev/" target="_blank" rel="noopener"><img src="assets/works/hidamari.jpg" alt="" width="640" height="400" loading="lazy"><div class="w-body"><b>ひだまり珈琲店</b><span>お店のホームページの見本。1つのお店を、来てほしいお客さんに合わせて6通りに作り分けました</span></div></a></li>
     <li><a href="https://mei-news.pages.dev/" target="_blank" rel="noopener"><img src="assets/works/meinews.jpg" alt="" width="640" height="400" loading="lazy"><div class="w-body"><b>デイリーめいちゃんニュース</b><span>推し活の例。推しの出演情報や更新を、毎朝自動で集めて1ページにまとめています</span></div></a></li>
@@ -342,65 +392,108 @@ footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
   <p class="work-note">仕事では、ある職場で担当者しかできなかった作業を、<b><span class="nb">1〜2時間</span>から<span class="nb">20〜30分</span></b>にしました。自分の見積もり作業も、<b>1件<span class="nb">30〜40分</span>から<span class="nb">約8分</span></b>になりました。</p>
 </section>
 
-<section id="rules-short">
-  <h2>お願いと、決まり</h2>
-  <div class="box">
-    <h3>直しは2回まで</h3>
-    <p>納品のあと、まとめてお伝えいただいた修正を<span class="nb">2回まで</span>お受けします。最初に決めた内容を変えたり、足したりする場合は、新しい見積もりになります。</p>
+<section id="plans">
+  <img class="roller to-right" src="assets/panda-roll.png" alt="">
+  <h2>3つのプラン</h2>
+  <p class="lead">仕事・副業・お店・趣味・個人の活動など、やってみたいことがあればご相談いただけます。<br>
+    3つのプランは、順番に受けるコースではありません。いまの状態や、やりたいことに合わせて選んでください。</p>
+
+  <div class="plans">
+
+    <article class="plan">
+      <h3 class="plan-name">はじめの一歩プラン</h3>
+      <div class="plan-price">
+        <span class="yen"><span class="nb">30,000円</span><small>（税込）</small></span>
+        <span class="times"><span class="nb">60分</span>×<span class="nb">3回</span></span>
+        <ul class="tags"><li>スマホだけでも利用可能</li></ul>
+      </div>
+      <h4>こんな方へ</h4>
+      <ul class="for">
+        <li>ほとんど使ったことがない</li>
+        <li><span class="nb">ChatGPT</span>などを入れたが、使いこなせていない</li>
+        <li>何を聞けばいいか分からない</li>
+        <li>基本から始めたい</li>
+      </ul>
+      <h4>目指すところ</h4>
+      <p class="aim">一人で相談して、返ってきた答えを直しながら、自分が欲しい結果に近づけられるようになる。</p>
+      <h4>進め方</h4>
+      <p>決まった教材ではなく、あなたが興味のあること・やりたいことを題材に進めます。</p>
+    </article>
+
+    <article class="plan">
+      <h3 class="plan-name">いっしょに作るプラン</h3>
+      <div class="plan-price">
+        <span class="yen"><span class="nb">50,000円</span><small>（税込）</small></span>
+        <span class="times"><span class="nb">60分</span>×<span class="nb">4回</span></span>
+        <ul class="tags"><li>スマホだけでも利用可能</li></ul>
+      </div>
+      <h4>こんな方へ</h4>
+      <ul class="for">
+        <li><span class="nb">ChatGPT</span>などは使っている</li>
+        <li>思った通りの結果にならない</li>
+        <li>やりたいことはあるが、進め方が分からない</li>
+        <li>一人だと途中で止まる</li>
+        <li>実際に作りたいもの・実現したいことがある</li>
+      </ul>
+      <h4>目指すところ</h4>
+      <p>あなたが実際にやりたいことを、<span class="nb">できる限り</span>完成まで一緒に進めます。</p>
+      <p class="aim">同時に、次から同じようなことを、あなた自身で進められるようになることを目指します。</p>
+      <h4>進め方</h4>
+      <p>操作するのは、あなたのスマホやパソコンです。パンダさんワークスは、助言・道案内・確認と、上手な頼み方のお手伝いをします。</p>
+      <p class="sub">週1回程度、<span class="nb">1〜1.5か月</span>ほどで4回を終えるペースが目安です。</p>
+    </article>
+
+    <article class="plan">
+      <h3 class="plan-name"><span class="nb">AI</span>に作業をまかせるプラン</h3>
+      <div class="plan-price">
+        <span class="yen"><span class="nb">100,000円</span><small>（税込）</small></span>
+        <span class="times"><span class="nb">60分</span>×<span class="nb">5回</span></span>
+        <ul class="tags">
+          <li class="is-strong">パソコン必須</li>
+          <li>利用期限：支払い完了日から<span class="nb">2か月</span></li>
+        </ul>
+      </div>
+      <h4>こんな方へ</h4>
+      <ul class="for">
+        <li><span class="nb">ChatGPT</span>などは普段から使っているが、その先の使い方が分からない</li>
+        <li>エージェント（あなたの代わりにパソコンを操作してくれる<span class="nb">AI</span>）は使っているが、作業の自動化まではできていない</li>
+      </ul>
+      <h4>目指すところ</h4>
+      <p>相談したあとに、あなたが手でやっているクリック・入力・書き写し・ファイルの整理などを、</p>
+      <p class="aim"><span class="nb">AI</span>に代わりにやってもらえる状態を目指します。</p>
+      <h4>進め方</h4>
+      <p>任せる先は、パンダさんワークスではなく<span class="nb">AI</span>です。エージェントを使えるようにするところから、作業を自動で回すところまで、設定するのはあなた自身。こちらはとなりで道案内をします。決まった教材はありません。</p>
+    </article>
+
   </div>
-  <div class="box">
-    <h3>事例として紹介させてください</h3>
-    <p>つくったものは、お名前や会社名を出さずに、事例として紹介させていただきます。お申し込みのときに、同意の確認をします。</p>
-  </div>
-  <div class="box">
-    <h3>受け付けられる数に限りがあります</h3>
-    <p>ひとりで運営しているため、一度に受け付けられる数に限りがあります。手一杯のときは、新しいお申し込みをお待ちいただくことがあります。</p>
-  </div>
-  <div class="box">
-    <h3>お預かりする資料について</h3>
-    <p>資料や情報をお預かりする場合の扱いは、お申し込みの前にご説明します。</p>
-  </div>
-  <p class="more">くわしくは<a href="rules.html">詳しい利用ルール</a>をご覧ください。</p>
+
+  <p class="more">ご利用方法・キャンセルなどは<br><a href="rules.html">詳しい利用ルール</a>をご覧ください。</p>
 </section>
 
-<section id="flow">
-  <h2>ご利用の流れ</h2>
-  <p class="lead">お支払いは銀行振込です。カード払いなど、ほかのお支払い方法は準備中です。</p>
-  <div class="cards">
-    <div class="card"><h3><span class="num">1</span>無料相談（進め方を決める）</h3></div>
-    <div class="card"><h3><span class="num">2</span>見積もり、または日時の決定</h3></div>
-    <div class="card"><h3><span class="num">3</span>銀行振込</h3></div>
-    <div class="card"><h3><span class="num">4</span>入金確認後に着手</h3></div>
-    <div class="card"><h3><span class="num">5</span>納品（見ながらの場合は、その場で完成）</h3></div>
-    <div class="card"><h3><span class="num">6</span>直し（2回まで）</h3></div>
-  </div>
-</section>
-
-<section>
-  <h2>自分でも、できるようになりたい方へ</h2>
-  <p class="lead">つくってもらったあと、「自分でもやってみたい」と思ったら。</p>
-  <div class="box">
-    <p><span class="nb">ChatGPT</span>などを、あなた自身が使えるようになるまで、<span class="nb">1対1</span>でとなりにいます。3つのプランから選べます。</p>
-    <p class="more"><a class="btn-line" href="banso.html">使い方を身につけたい方はこちら</a></p>
-  </div>
+<section id="movie">
+  <h2>教えてくれる<span class="nb">AI</span>と、<br>手を動かす<span class="nb">AI</span></h2>
+  <p class="lead">3つめの<span class="nb">「<span class="nb">AI</span>に作業をまかせる」</span>って、<span class="nb">どういうこと？</span>　という方へ。同じ<span class="nb">AI</span>でも、答えを教えてくれる使い方（チャット）と、代わりに作業を進めてくれる使い方（エージェント）があります。<span class="nb">90秒</span>のお話にしました。</p>
+  <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/J1MQfz63fCQ?rel=0" title="パンダさん、カレーを作る（AIのチャットとエージェントのちがい）" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+  <p class="more"><span class="nb">「<span class="nb">AI</span>に作業をまかせるプラン」</span>は、<br>あとのほうの使い方を<span class="nb">身につける</span>プランです。</p>
 </section>
 
 <section id="consult">
   <img class="roller to-left" src="assets/panda-roll.png" alt="">
   <h2>まずは無料相談から</h2>
-  <p class="lead">「こんなこと、頼めるのかな？」<br>「見ながらがいいか、おまかせがいいか分からない」<br>「いくらくらいになるか知りたい」<br>そんな段階でも相談できます。</p>
+  <p class="lead">「自分にはどのプランが合うんだろう？」<br>「こんなこともできる？」<br>「やりたいことはあるけど、何から始めればいいか分からない」<br>そんな段階でも相談できます。</p>
 
   <p>まずは<span class="nb">30分程度</span>の相談で、次のようなことを確認します。</p>
   <ul class="checks">
-    <li>困っていること・つくりたいもの</li>
-    <li>見ながら進めたいか、おまかせにしたいか</li>
-    <li>いま使っているアプリやサービス</li>
+    <li>いま、どんなアプリやサービスを使っているか</li>
+    <li>やってみたいこと</li>
+    <li>いま困っていること</li>
     <li>スマホ・パソコンなどの環境</li>
+    <li>どこまで自分でできるようになりたいか</li>
   </ul>
-  <p>内容を聞いたうえで、進め方と、おおよその見積もりをお伝えします。</p>
+  <p>内容を聞いたうえで、いまの状況や目的に合いそうなプラン・進め方を、パンダさんワークスからご提案します。</p>
 
   <div class="box">
-    <p>無料相談は、実際につくる時間ではなく、<b>「どう進めるのがよさそうか」を一緒に整理する時間</b>です。</p>
+    <p>無料相談は、実際の制作や作業を進めるための時間ではなく、<b>「これからどう進めるのがよさそうか」を一緒に整理する時間</b>です。</p>
   </div>
   <div class="box">
     <p>オンライン相談は<span class="nb">30分程度</span>を基本とします。対面も相談可能です。</p>
@@ -413,12 +506,24 @@ footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
   </div>
 </section>
 
+<section id="flow">
+  <h2>ご利用の流れ</h2>
+  <p class="lead">お支払いは銀行振込です。カード払いなど、ほかのお支払い方法は準備中です。</p>
+  <div class="cards">
+    <div class="card"><h3><span class="num">1</span>無料相談</h3></div>
+    <div class="card"><h3><span class="num">2</span>利用するプランを決定</h3></div>
+    <div class="card"><h3><span class="num">3</span>初回日時を仮押さえ</h3></div>
+    <div class="card"><h3><span class="num">4</span>銀行振込</h3></div>
+    <div class="card"><h3><span class="num">5</span>入金確認後に正式予約</h3></div>
+    <div class="card"><h3><span class="num">6</span>サポート開始</h3></div>
+  </div>
+</section>
+
 </main>
 
 <footer>
   <img class="roller to-right" src="assets/panda-roll.png" alt="">
   <ul class="foot-nav">
-    <li><a href="banso.html">自分で使えるようになりたい方へ</a></li>
     <li><a href="rules.html">詳しい利用ルール</a></li>
     <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
     <li><a href="privacy.html">プライバシーポリシー</a></li>
