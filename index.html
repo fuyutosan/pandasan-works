@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>パンダさんワークス｜困りごと、ひとつ形にします。</title>
-<meta name="description" content="ホームページ、動画、業務改善の道具、作業の自動化。ChatGPTなどを使って、あなたの困りごとを1つ形にします。1万円〜。">
+<title>パンダさんワークス｜お店・教室の「伝わる形」を、原稿なしから作ります。</title>
+<meta name="description" content="お店・教室の「伝わる形」を、原稿なしから作ります。ホームページ制作 ¥20,000、紹介文作成 ¥2,000（ココナラで購入できます）。ご相談は無料です。">
 <!-- シェアされたときに出る画像と文（OGP） -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="パンダさんワークス">
-<meta property="og:title" content="パンダさんワークス｜困りごと、ひとつ形にします。">
-<meta property="og:description" content="ホームページ、動画、業務改善の道具、作業の自動化。ChatGPTなどを使って、あなたの困りごとを1つ形にします。1万円〜。">
+<meta property="og:title" content="パンダさんワークス｜お店・教室の「伝わる形」を、原稿なしから作ります。">
+<meta property="og:description" content="お店・教室の「伝わる形」を、原稿なしから作ります。ホームページ制作 ¥20,000、紹介文作成 ¥2,000（ココナラで購入できます）。ご相談は無料です。">
 <meta property="og:url" content="https://pandasan-works.pages.dev/">
 <meta property="og:image" content="https://pandasan-works.pages.dev/assets/ogp.png">
 <meta property="og:image:width" content="1200">
@@ -22,7 +22,8 @@
 <!-- ============================================================
      差し替えるのはここだけ
      ① ロゴ …… assets/logo.png（屋号はロゴ画像に入っている）
-     ② 無料相談 … Googleフォーム https://docs.google.com/forms/d/e/1FAIpQLSdALwW1_lnOV1Wi9hjLKgeXgaUpa45v6_L0zaG6Ge-39h7j0w/viewform （#consult とフッターの2か所からリンク）
+     ③ 買える場所 … ココナラ（HP制作 https://coconala.com/services/4470408 ／ 紹介文作成 https://coconala.com/services/4475544）
+     ② 無料相談 … Googleフォーム https://docs.google.com/forms/d/e/1FAIpQLSdALwW1_lnOV1Wi9hjLKgeXgaUpa45v6_L0zaG6Ge-39h7j0w/viewform （#consult-top と #consult とフッターの3か所からリンク）
      ※ 詳しい利用ルール rules.html／特商法 tokushoho.html／プライバシー privacy.html
      ============================================================ -->
 
@@ -221,6 +222,17 @@ h1{ font-size:1.72rem; line-height:1.6; margin:0 0 14px; font-weight:700; }
 .video{ position:relative; aspect-ratio:16/9; border-radius:14px; overflow:hidden; background:#000; }
 .video iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
 
+/* ---------- 買えるメニュー（ココナラ） ---------- */
+.menu-plans{ margin-top:0; }
+.plan .buy{ text-align:center; margin:16px 0 0; }
+.plan .buy .btn-fill, .plan .buy .btn-line{ margin:0; }
+.plan .buy small{ display:block; margin-top:6px; font-size:.8rem; color:var(--ink-sub); }
+.plan .plan-desc{ margin:12px 0 0; }
+.tags + .plan-desc{ margin-top:12px; }
+.plan-price .yen.is-soon{ font-size:1.12rem; }
+.menu-note{ margin:18px 0 0; font-size:.88rem; color:var(--ink-sub); }
+.consult-mini .cta-box{ margin-top:6px; }
+
 /* ---------- フッター ---------- */
 footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
   color:var(--ink-sub); border-top:1px solid var(--line); }
@@ -245,7 +257,7 @@ footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
 }
 
 /* ---------- パンダさん：区切り線の上にいて、見えたときに1回だけころんと転がる ---------- */
-#plans, #menu, #consult, footer{ position:relative; }
+#plans, #menu, #more-menu, #consult, footer{ position:relative; }
 .roller{ position:absolute; top:-29px; width:36px; height:auto; opacity:.28; pointer-events:none; }
 .roller.to-right{ left:8%; }
 .roller.to-left{ right:8%; }
@@ -268,7 +280,7 @@ footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
 @media (min-width:900px){
   .hero{ --logo:180px; padding:52px 40px 32px; }
   .hero .m{ display:none; }
-  h1{ font-size:2.5rem; margin-bottom:16px; }
+  h1{ font-size:2.15rem; margin-bottom:16px; }
   .tagline{ font-size:1.12rem; }
   .pyo{ font-size:1.2rem; left:calc(50% + 64px); }
 }
@@ -290,10 +302,10 @@ footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
       </div>
       <span class="pyo" aria-hidden="true"><span class="nb">ピョコン！</span></span>
     </div>
-    <h1>困りごと、<br class="m"><span class="nb">ひとつ形にします。</span></h1>
-    <p class="tagline">ホームページ、動画、<br class="m"><span class="nb">毎日の作業を楽にする道具。</span><br><span class="nb">ChatGPT</span>などを使って、<br class="m">あなたの困りごとを<span class="nb">1つ、形にします。</span></p>
-    <a class="btn-line" href="#consult">まずは無料相談</a>
-    <span class="hero-note"><span class="nb">1万円〜</span>・見ながら進めることも、おまかせすることもできます。<br class="m">ご相談は無料です。</span>
+    <h1>お店・教室の<br class="m"><span class="nb">「伝わる形」</span>を、<br class="m"><span class="nb">原稿なしから</span>作ります。</h1>
+    <p class="tagline">困りごとを、<span class="nb">ひとつ形にします。</span><br><span class="nb">ChatGPT</span>などを使って、<br class="m">ホームページ、動画、<br class="m"><span class="nb">毎日の作業を楽にする道具。</span></p>
+    <a class="btn-line" href="#menu">メニューを見る</a>
+    <span class="hero-note">見ながら進めることも、<br class="m">おまかせすることもできます。<br>ご相談は無料です。</span>
   </div>
 </header>
 
@@ -303,15 +315,66 @@ footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
 
 <section id="menu">
   <img class="roller to-right" src="assets/panda-roll.png" alt="">
-  <h2>つくれるもの</h2>
-  <p class="lead">困っていること1つを、形にします。<br>どれも <b>1万円〜</b>（つくるものによって変わります）。</p>
+  <h2>買えるメニュー</h2>
+  <p class="lead">ココナラで、そのままお申し込みいただけます。</p>
+  <div class="plans menu-plans">
+    <article class="plan">
+      <h3 class="plan-name">ホームページ制作</h3>
+      <div class="plan-price">
+        <span class="yen"><span class="nb">¥20,000</span></span>
+        <span class="times"><span class="nb">3ページ</span></span>
+        <ul class="tags"><li class="is-strong">原稿なしOK</li><li>納期 約<span class="nb">10日</span></li><li>直し<span class="nb">3回</span>まで無料</li></ul>
+      </div>
+      <p class="plan-desc">お店や教室のホームページを、<span class="nb">3ページ</span>でつくります。文章の原稿がなくても、うかがった内容から形にします。</p>
+      <p class="buy"><a class="btn-fill" href="https://coconala.com/services/4470408" target="_blank" rel="noopener"><span class="nb">ココナラで見る</span></a><small>ココナラのページが開きます</small></p>
+    </article>
+
+    <article class="plan">
+      <h3 class="plan-name">紹介文作成</h3>
+      <div class="plan-price">
+        <span class="yen"><span class="nb">¥2,000</span></span>
+        <span class="times"><span class="nb">トライアル価格</span></span>
+        <ul class="tags"><li class="is-strong">先着<span class="nb">5名</span></li><li><span class="nb">2026年11月30日</span>まで</li><li>納期 約<span class="nb">5日</span></li><li>直し<span class="nb">1回</span>まで無料</li></ul>
+      </div>
+      <p class="plan-desc">ホームページ・マップ・インスタに載せる、お店や教室の紹介文を書きます。直しは<span class="nb">1回</span>まで無料で、有料で<span class="nb">1回</span>追加できます（<span class="nb">+500円</span>）。</p>
+      <p class="buy"><a class="btn-fill" href="https://coconala.com/services/4475544" target="_blank" rel="noopener"><span class="nb">ココナラで見る</span></a><small>ココナラのページが開きます</small></p>
+    </article>
+
+    <article class="plan">
+      <h3 class="plan-name">インスタ運用代行</h3>
+      <div class="plan-price">
+        <span class="yen is-soon"><span class="nb">準備中・相談受付中</span></span>
+        <span class="times"><span class="nb">価格は準備中</span></span>
+        <ul class="tags"><li>準備中</li><li class="is-strong">相談受付中</li></ul>
+      </div>
+      <p class="plan-desc">お店や教室のインスタ運用をお手伝いするメニューです。いまは準備中です。ご希望があれば、無料相談でうかがいます。</p>
+      <p class="buy"><a class="btn-line" href="https://docs.google.com/forms/d/e/1FAIpQLSdALwW1_lnOV1Wi9hjLKgeXgaUpa45v6_L0zaG6Ge-39h7j0w/viewform" target="_blank" rel="noopener"><span class="nb">無料相談で聞いてみる</span></a><small>フォームが開きます</small></p>
+    </article>
+
+  </div>
+  <p class="menu-note">ココナラでのお申し込み・お支払い・やりとりは、ココナラの中で行います。</p>
+</section>
+
+<section id="consult-top" class="consult-mini">
+  <h2>買う前に、聞いてみたいときは</h2>
+  <p class="lead">「うちの場合は、どれが合う？」「インスタ運用について知りたい」<br>そんなときは、無料相談からどうぞ。</p>
+  <div class="cta-box">
+    <p><a class="btn-fill" href="https://docs.google.com/forms/d/e/1FAIpQLSdALwW1_lnOV1Wi9hjLKgeXgaUpa45v6_L0zaG6Ge-39h7j0w/viewform" target="_blank" rel="noopener"><span class="nb">無料相談を申し込む</span></a></p>
+    <p class="hero-note">フォームが開きます。ご相談は無料です。</p>
+  </div>
+</section>
+
+<section id="more-menu">
+  <img class="roller to-left" src="assets/panda-roll.png" alt="">
+  <h2>ほかに、こんなものも作れます</h2>
+  <p class="lead">困っていること1つを、形にします。金額は、ご相談のあとの見積もりでお伝えします。</p>
   <ul class="examples">
     <li><b>ホームページ</b>お店や活動を紹介するページ。メニュー・営業時間・地図をわかりやすく伝えます。<br><small>たとえば：お店のホームページ</small></li>
     <li><b>動画</b>説明や紹介の短い動画。見ているうちに伝わる形にします。<br><small>たとえば：サービスの紹介動画</small></li>
     <li><b>業務改善の道具</b>手間のかかる作業を、楽にする小さな道具。<br><small>たとえば：注文メモを表にまとめる、請求書づくり、毎月の集計</small></li>
     <li><b>作業の自動化</b>決まった作業を、自動で回す仕組み。<br><small>たとえば：毎朝の情報をまとめて届ける、毎月の書き写し</small></li>
   </ul>
-  <p class="note"><span class="nb">60分以内</span>で終わる小さなものが、1万円の目安です。それより大きなものは、ご相談のあとに見積もりをお出しします。内容によっては対応が難しい場合もあります。</p>
+  <p class="note">つくるものの大きさによって、金額が変わります。ご相談のあとに、見積もりをお出しします。内容によっては対応が難しい場合もあります。</p>
 </section>
 
 <section>
@@ -339,14 +402,18 @@ footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
     <li><a href="https://sumiyomi.pages.dev/" target="_blank" rel="noopener"><img src="assets/works/sumiyomi.jpg" alt="" width="640" height="400" loading="lazy"><div class="w-body"><b>墨詠み</b><span>いまの気持ちを、選んだ言葉から一枚の札にするアプリ</span></div></a></li>
   </ul>
   <p class="more">ゲームやアプリなど、ほかにつくったものは<br><a href="https://hangar-f.pages.dev/" target="_blank" rel="noopener">作品置き場</a>にまとめています。</p>
-  <p class="work-note">仕事では、ある職場で担当者しかできなかった作業を、<b><span class="nb">1〜2時間</span>から<span class="nb">20〜30分</span></b>にしました。自分の見積もり作業も、<b>1件<span class="nb">30〜40分</span>から<span class="nb">約8分</span></b>になりました。</p>
+</section>
+
+<section id="results">
+  <h2>実績</h2>
+  <p class="work-note" style="margin-top:0">仕事では、ある職場で担当者しかできなかった作業を、<b><span class="nb">1〜2時間</span>から<span class="nb">20〜30分</span></b>にしました。自分の見積もり作業も、<b>1件<span class="nb">30〜40分</span>から<span class="nb">約8分</span></b>になりました。</p>
 </section>
 
 <section id="rules-short">
   <h2>お願いと、決まり</h2>
   <div class="box">
-    <h3>直しは2回まで</h3>
-    <p>納品から<span class="nb">14日以内</span>に、まとめてお伝えいただいた修正を<span class="nb">2回まで</span>お受けします。最初に決めた内容を変えたり、足したりする場合は、新しい見積もりになります。</p>
+    <h3>直しの回数</h3>
+    <p>ココナラのメニューは、掲載のとおりの回数までお受けします（ホームページ制作は<span class="nb">3回</span>まで、紹介文作成は<span class="nb">1回</span>まで。紹介文は、有料で<span class="nb">1回</span>追加できます：<span class="nb">+500円</span>）。そのほかのものは、納品から<span class="nb">14日以内</span>に、まとめてお伝えいただいた修正を、見積もりのときにお伝えした回数までお受けします。最初に決めた内容を変えたり、足したりする場合は、新しい見積もりになります。</p>
   </div>
   <div class="box">
     <h3>事例として紹介させてください</h3>
@@ -365,23 +432,14 @@ footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
 
 <section id="flow">
   <h2>ご利用の流れ</h2>
-  <p class="lead">お支払いは銀行振込です。カード払いなど、ほかのお支払い方法は準備中です。</p>
+  <p class="lead">ココナラでお申し込みのときは、お支払いもココナラの中で行います。無料相談から進めるときは、お支払いは銀行振込です（カード払いなど、ほかのお支払い方法は準備中です）。</p>
   <div class="cards">
-    <div class="card"><h3><span class="num">1</span>無料相談（進め方を決める）</h3></div>
-    <div class="card"><h3><span class="num">2</span>見積もり、または日時の決定</h3></div>
-    <div class="card"><h3><span class="num">3</span>銀行振込</h3></div>
+    <div class="card"><h3><span class="num">1</span>ココナラで申し込み、または無料相談</h3></div>
+    <div class="card"><h3><span class="num">2</span>内容の確認（見積もり、または日時の決定）</h3></div>
+    <div class="card"><h3><span class="num">3</span>お支払い（ココナラの中、または銀行振込）</h3></div>
     <div class="card"><h3><span class="num">4</span>入金確認後に着手</h3></div>
     <div class="card"><h3><span class="num">5</span>納品（見ながらの場合は、その場で完成）</h3></div>
-    <div class="card"><h3><span class="num">6</span>直し（2回まで）</h3></div>
-  </div>
-</section>
-
-<section>
-  <h2>自分でも、できるようになりたい方へ</h2>
-  <p class="lead">つくってもらったあと、「自分でもやってみたい」と思ったら。</p>
-  <div class="box">
-    <p><span class="nb">ChatGPT</span>などを、あなた自身が使えるようになるまで、<span class="nb">1対1</span>でとなりにいます。3つのプランから選べます。</p>
-    <p class="more"><a class="btn-line" href="banso.html">使い方を身につけたい方はこちら</a></p>
+    <div class="card"><h3><span class="num">6</span>直し（メニューごとの回数まで）</h3></div>
   </div>
 </section>
 
@@ -410,6 +468,15 @@ footer{ padding:34px 0 56px; text-align:center; font-size:.86rem;
     <p><a class="btn-fill" href="https://docs.google.com/forms/d/e/1FAIpQLSdALwW1_lnOV1Wi9hjLKgeXgaUpa45v6_L0zaG6Ge-39h7j0w/viewform" target="_blank" rel="noopener"><span class="nb">無料相談を申し込む</span></a></p>
     <p class="hero-note">フォームが開きます。お問い合わせも、同じフォームから送れます。<br>
       お返事は<span class="nb">毎日9〜21時</span>のあいだに、シロタからお送りします。</p>
+  </div>
+</section>
+
+<section>
+  <h2>自分でも、できるようになりたい方へ</h2>
+  <p class="lead">つくってもらったあと、「自分でもやってみたい」と思ったら。</p>
+  <div class="box">
+    <p><span class="nb">ChatGPT</span>などを、あなた自身が使えるようになるまで、<span class="nb">1対1</span>でとなりにいます。3つのプランから選べます。</p>
+    <p class="more"><a class="btn-line" href="banso.html">使い方を身につけたい方はこちら</a></p>
   </div>
 </section>
 
